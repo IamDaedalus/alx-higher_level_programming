@@ -6,14 +6,8 @@ def print_matrix_integer(matrix=[[]]):
     Args:
         matrix: the matrix to print
     """
-    # iterate over each list in the list
-    for i in range(len(matrix)):
-        # iterate over each element in each lis
-        for j in range(len(matrix[i])):
-            print("{}".format(matrix[i][j]), end="")
-            # check if 
-            if j < len(matrix[i]) - 1:
-                print(" ", end="")
-
-        if i < len(matrix):
-            print("$")
+    for i in matrix:
+        for j in i:
+            print("{:d}".format(j),
+                  end=" " if j != i[-1] else "")
+        print()  # Move to the next line after printing each row

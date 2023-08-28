@@ -1,13 +1,21 @@
 #!/usr/bin/python3
 
 def new_in_list(my_list, idx, element):
-    new_list = my_list.copy()
-    length = len(new_list)
+    """Creates a new list and changes the element at
+    idx
+
+    Args:
+        my_list: the list to copy
+        idx: the index at which to make the change
+        element: the new element to insert
+
+    Returns a new list with the changed element
+    """
+    new_list = my_list[:]
+    length = len(new_list) - 1
 
     if idx < 0 or idx > length:
-        return new_list
-    else:
-        new_list[idx] = element
-        return new_list
+        return my_list
 
-
+    new_list[idx] = element
+    return new_list

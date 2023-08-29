@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-multiply_list_map = __import__('11-multiply_list_map').multiply_list_map
+update_dictionary = __import__('7-update_dictionary').update_dictionary
+print_sorted_dictionary = \
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
 
-my_list = [1, 2, 3, 4, 6]
-new_list = multiply_list_map(my_list, 4)
-print(new_list)
-print(my_list)
+my_dict = { 'a': "a", 'b': "b" , 'c': "c", 'd': "d", 'e': "e" }
+key = "a"
+value = "A"
+new_dict = update_dictionary(my_dict, key, value)
+print_sorted_dictionary(new_dict)
+print("xx")
+print_sorted_dictionary(my_dict)

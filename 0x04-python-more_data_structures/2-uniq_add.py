@@ -8,7 +8,7 @@ def uniq_add(my_list=[]):
     my_set = set()
     for i in range(0, len(my_list)):
         if my_set.__contains__(my_list[i]):
-            continue;
+            continue
         else:
             ret_val = ret_val + my_list[i]
             my_set.add(my_list[i])

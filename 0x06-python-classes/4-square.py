@@ -1,15 +1,21 @@
 #!/usr/bin/python3
 
-"""This is an empty class that will be built upon
-to help create a new Square object to used in our program.
-
-As time goes on we'll expand on it's methods and fields so
-that over time it becomes more and more useful
+"""This class contains methods and attributes for
+a creating a square, getting various properties about
+it such as its position, size and area packaged in
+a neat format
 """
+
 
 class Square:
     """This class defines a square with private instance attribute 'size'"""
     def __init__(self, size=0):
+        """This method initialises a new class Square
+        with private attribute size
+
+        Args:
+            size: the size of the Sqr as an int
+        """
         self.size = size
 
     @property

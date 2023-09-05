@@ -1,0 +1,52 @@
+# 0-add_integer.txt
+
+USAGE TESTS:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(2, 3)
+5
+
+>>> add_integer(7.356, 10.678)
+17
+
+>>> add_integer(75, 90 - 29)
+136
+
+>>> add_integer(9999999999999999999, 1)
+10000000000000000000
+
+>>> add_integer(-5, -10)
+-15
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(3.14, 1.99)
+4
+
+>>> add_integer(5, 3.5)
+8
+
+>>> add_integer(0.1, 0.2)
+0
+
+>>> add_integer("10", "20")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer("Hello", "World")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer("Hello")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(5, "World")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer

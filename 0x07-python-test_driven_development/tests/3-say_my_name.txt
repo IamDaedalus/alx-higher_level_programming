@@ -1,0 +1,53 @@
+# 3-say_my_name.txt
+
+USAGE TESTS:
+
+>>> say = __import__('3-say_my_name').say_my_name
+
+>>> say("Manny", "Quansah")
+My name is Manny Quansah
+
+>>> say("Cameron", "James")
+My name is Cameron James
+
+>>> say("Spongebob Squarepants")
+My name is Spongebob Squarepants 
+
+>>> say(78, "Avenue")
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
+>>> first = "Matt"
+
+>>> second = "Murdock"
+
+>>> say(first, second)
+My name is Matt Murdock
+
+>>> say("Life of ", 3.141)
+Traceback (most recent call last):
+   ...
+TypeError: last_name must be a string
+
+>>> person = ["Danny", "Phantom"]
+
+>>> say(person[0], person[1])
+My name is Danny Phantom
+
+>>> person = [1234567890, "Phantom"]
+
+>>> say(person[0], person[1])
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
+>>> say(90, 90)
+Traceback (most recent call last):
+   ...
+TypeError: first_name must be a string
+
+>>> say("hello", 90)
+Traceback (most recent call last):
+   ...
+TypeError: last_name must be a string

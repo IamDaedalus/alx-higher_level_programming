@@ -4,9 +4,10 @@
 
 
 class Rectangle:
+    """Class to create a new Rectangle instance"""
     number_of_instances = 0
     print_symbol = "#"
-    """Class to create a new Rectangle instance"""
+
     def __init__(self, width=0, height=0):
         """Constructor method for our Rectangle class
 

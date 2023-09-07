@@ -4,9 +4,10 @@
 
 
 class Rectangle:
+    """Class to create a new Rectangle instance"""
     number_of_instances = 0
     print_symbol = "#"
-    """Class to create a new Rectangle instance"""
+
     def __init__(self, width=0, height=0):
         """Constructor method for our Rectangle class
 
@@ -97,7 +98,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Class method that returns a new Rectangle instance with width == height == size.
+        """Class method that returns a new Rectangle instance
+        with width == height == size.
 
         Args:
             size (int): The size of the square.

@@ -1,0 +1,5 @@
+# PYTHON TESTS
+
+>>> ps = __import__('1-my_list).print_sorted
+
+>>> 

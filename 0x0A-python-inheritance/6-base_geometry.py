@@ -2,6 +2,7 @@
 
 """Another empty class to build on"""
 
+
 class BaseGeometry:
     """This is the base class in the module or script
     """

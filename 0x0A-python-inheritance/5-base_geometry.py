@@ -2,6 +2,7 @@
 
 """Empty module"""
 
+
 class BaseGeometry:
     """Empty class"""
     pass

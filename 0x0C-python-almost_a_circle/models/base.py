@@ -26,11 +26,15 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns the JSON representation of list_dictionaries"""
+        """returns the JSON representation of list_dictionaries
+
+        Args:
+            list_dictionaries: a list of dictionaries
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        if (type(list_dictionaries) != list or not
-                all(type(i) == dict for i in list_dictionaries)):
+        if (type(list_dictionaries) is not list or not
+                all(type(i) is dict for i in list_dictionaries)):
             raise TypeError("list_dictionaries must be a list of dicts")
         return json.dumps(list_dictionaries)
 

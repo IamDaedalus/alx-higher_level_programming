@@ -3,7 +3,6 @@
 """Base class for the incoming tasks
 """
 
-from collections.abc import Iterator
 import json
 
 

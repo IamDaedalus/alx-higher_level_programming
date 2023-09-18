@@ -84,6 +84,9 @@ class Rectangle(Base):
         attributes = ['id', 'width', 'height', 'x', 'y']
 
         if args is not None and len(args) != 0:
+            if len(args) > 5:
+                raise IndexError("list index out of range")
+
             for i, value in enumerate(args):
                 if not isinstance(value, int):
                     raise TypeError("{} must be an int".format(attributes[i]))
@@ -117,7 +120,7 @@ class Rectangle(Base):
         Return:
             returns the value if it passes all Type and min checks
         """
-        if not isinstance(value, Type):
+        if not type(value) is Type:
             raise TypeError("{} must be an integer".format(name))
         if min == 0 and value < min:
             raise ValueError("{} must be >= 0".format(name))
@@ -130,8 +133,15 @@ class Rectangle(Base):
         """This returns a dictionary representation of
         the Rectangle
         """
-        return {'x': self.x, 'y': self.y, 'id': self.id,
-                'height': self.height, 'width': self.width}
+        dictionary = {
+                'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width
+                }
+
+        return dictionary
     # HELPERS END
 
     def __str__(self):

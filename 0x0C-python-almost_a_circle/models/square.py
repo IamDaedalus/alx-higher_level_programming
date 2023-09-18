@@ -43,6 +43,8 @@ class Square(Rectangle):
         attributes = ['id', 'size', 'x', 'y']
 
         if args is not None and len(args) != 0:
+            if len(args) > 4:
+                raise IndexError("list index out of range")
             for i, value in enumerate(args):
                 if not isinstance(value, int):
                     raise TypeError("{} must be an int".format(attributes[i]))

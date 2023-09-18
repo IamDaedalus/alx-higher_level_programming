@@ -40,23 +40,36 @@ class Square(Rectangle):
             args: Variable-length positional arguments
             kwargs: Variable-length keyword arguments
         """
-        attributes = ['id', 'width', 'height', 'x', 'y']
+        attributes = ['id', 'size', 'x', 'y']
 
-        if args:
-            if len(args) > 4:
-                raise IndexError("Too many positional arguments")
+        if args is not None and len(args) != 0:
             for i, value in enumerate(args):
-                setattr(self, attributes[i], value)
-        elif kwargs:
+                if not isinstance(value, int):
+                    raise TypeError("{} must be an int".format(attributes[i]))
+                if attributes[i] != 'size':
+                    setattr(self, attributes[i], value)
+                else:
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+        elif kwargs and not args:
             for key, value in kwargs.items():
-                if key in attributes:
+                if not isinstance(value, int):
+                    raise TypeError("{} must be an int".format(key))
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
                     setattr(self, key, value)
-        else:
-            raise ValueError("No arguments provided")
+
+    def to_dictionary(self):
+        """This returns a dictionary representation of
+        the Rectangle
+        """
+        return {'id': self.id, 'x': self.x, 'size': self.width, 'y': self.y}
 
     def __str__(self):
         """This method returns the string representation of
         a Square instance
         """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
-                self.x, self.x, self.y, self.height)
+                self.id, self.x, self.y, self.height)

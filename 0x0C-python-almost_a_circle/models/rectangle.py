@@ -83,19 +83,16 @@ class Rectangle(Base):
         """
         attributes = ['id', 'width', 'height', 'x', 'y']
 
-        if args:
-            if len(args) > 5:
-                raise IndexError("Too many positional arguments")
+        if args is not None and len(args) != 0:
             for i, value in enumerate(args):
+                if not isinstance(value, int):
+                    raise TypeError("{} must be an int".format(attributes[i]))
                 setattr(self, attributes[i], value)
-        elif kwargs:
+        elif kwargs and not args:
             for key, value in kwargs.items():
-                if key in attributes:
-                    setattr(self, key, value)
-                else:
-                    raise ValueError("Invalid attribute {}".format(key))
-        else:
-            raise ValueError("No arguments provided")
+                if not isinstance(value, int):
+                    raise TypeError("{} must be an int".format(key))
+                setattr(self, key, value)
 
     def display(self):
         """Print the rectangle as a grid of #
@@ -128,6 +125,13 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(name))
 
         return value
+
+    def to_dictionary(self):
+        """This returns a dictionary representation of
+        the Rectangle
+        """
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
     # HELPERS END
 
     def __str__(self):

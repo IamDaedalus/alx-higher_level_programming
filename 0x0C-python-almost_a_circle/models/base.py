@@ -32,7 +32,7 @@ class Base:
         Args:
             list_dictionaries: a list of dictionaries
         """
-        if len(list_dictionaries) == 0 or not list_dictionaries:
+        if len(list_dictionaries) == 0 or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -65,7 +65,3 @@ class Base:
             return '[]'
         else:
             return json.loads(json_string)
-
-    @classmethod
-    def create(cls, **dictionary):
-        pass

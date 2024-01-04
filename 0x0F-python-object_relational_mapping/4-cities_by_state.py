@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Script to list all states that start match a user provided keyword in
-htbn_0e_0_usa in ascending order """
+"""This script lists all cities in a database"""
 
 import MySQLdb
 import sys
@@ -8,8 +7,8 @@ import sys
 if __name__ == "__main__":
     av = sys.argv
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-    .format(av[4])
+    query = "SELECT cities.id,cities.name,states.name FROM cities JOIN\
+            states ON cities.state_id=states.id ORDER BY cities.id ASC"
     connection = MySQLdb.connect(user=av[1], passwd=av[2], database=av[3],
                                  port=3306, host="localhost")
     c = connection.cursor()
